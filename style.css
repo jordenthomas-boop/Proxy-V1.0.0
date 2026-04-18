@@ -1,0 +1,28 @@
+body { margin: 0; background: #000; color: #fff; font-family: sans-serif; overflow: hidden; height: 100vh; transition: 0.5s; }
+body.light-mode { background: #fff !important; color: #000 !important; }
+#main { padding: 20px; text-align: center; }
+.page { display: none; height: 75vh; overflow-y: auto; }
+button { background: #222; color: #fff; border: none; padding: 12px; border-radius: 12px; cursor: pointer; }
+input { background: #111; border: 1px solid #333; color: #fff; padding: 10px; border-radius: 5px; }
+
+/* IOS LAYERS */
+.ios-layer { position: fixed; inset: 0; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 100000; transition: opacity 1s; }
+.ios-logo { width: 90px; filter: invert(1); opacity: 0; animation: fadeIn 2s forwards 0.5s; }
+.ios-hello { font-size: 5rem; font-family: 'Apple Chancery', cursive; opacity: 0; transition: 0.8s; }
+.ios-home-bar { width: 130px; height: 5px; background: #fff; border-radius: 10px; margin-bottom: 40px; position: absolute; bottom: 20px; animation: bounce 2s infinite; }
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes bounce { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; transform: translateY(-5px); } }
+
+/* DOCK */
+#dockContainer { position: fixed; bottom: 20px; width: 100%; display: flex; justify-content: center; z-index: 1000; }
+#dock { background: rgba(30, 30, 30, 0.8); backdrop-filter: blur(20px); padding: 10px 20px; border-radius: 50px; border: 1px solid #333; display: flex; gap: 15px; }
+#dock button { background: none; font-size: 1.5rem; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+
+/* TEACHER LOCKOUT */
+#banScreen { position: fixed; inset: 0; background: #fff !important; color: #000 !important; z-index: 100001; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+#backdoor { background: #000; color: #fff; margin-top: 30px; width: 200px; }
+
+/* GAMES */
+canvas { background: #000; border: 1px solid #333; display: block; margin: 10px auto; }
+.fs { position: fixed !important; inset: 0 !important; width: 100vw !important; height: 100vh !important; z-index: 2000; }
+#panicBtn { position: fixed; top: 10px; right: 10px; z-index: 2001; }
